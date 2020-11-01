@@ -20,4 +20,9 @@ Rails.application.routes.draw do
 
   delete "/posts/:id", to: "posts#destroy"
 
+  # 2) Use the resources method to abstract the above code: 
+  #resources :controller
+  #resources :controller, only: [:controllerAction, ..., :controllerAction]
+  #resources :controller, except: [:controllerAction, ..., :controllerAction]
+  
 end
