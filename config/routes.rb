@@ -6,18 +6,24 @@ Rails.application.routes.draw do
 
   # 1) Draw the routes: HTTP verb "URL path", to: "controller#action"
 
-  get "/posts", to: "posts#index"
+                                  #Action View Rails URL helper methods
+  get "/posts", to: "posts#index" #posts_path
 
-  get "/posts/:id", to: "posts#show"
+  get "/posts/:id", to: "posts#show" #post_path(@post)
 
-  get "/posts/new", to: "posts#new"
+  get "/posts/new", to: "posts#new" #new_post_path
 
-  post "/posts", to: "posts#create"
+  post "/posts", to: "posts#create" #posts_path
 
-  get "/posts/:id/edit", to: "posts#edit"
+  get "/posts/:id/edit", to: "posts#edit" #edit_post_path(@post)
 
-  patch "/posts/:id", to: "posts#update"
+  patch "/posts/:id", to: "posts#update" #post_path(@post)
 
-  delete "/posts/:id", to: "posts#destroy"
+  delete "/posts/:id", to: "posts#destroy" #post_path(@post)
 
+  # 2) Use the resources method to abstract the above code: 
+  #resources :controller
+  #resources :controller, only: [:controllerAction, ..., :controllerAction]
+  #resources :controller, except: [:controllerAction, ..., :controllerAction]
+  
 end
